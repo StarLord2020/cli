@@ -159,10 +159,7 @@ export default new Vuex.Store({
           db.collection('users').doc(context.getters.getUserId).collection('services').get().then(res=>{
             context.commit('setServicesId',res.docs[0].id)
             context.dispatch('select_',context.getters.get_date_now);
-            if(router.path!=(router.path+'/')){
-
-              router.push('/').catch();
-            }
+            router.push('/').catch(err=>{return err});
           });    
         });
       },
