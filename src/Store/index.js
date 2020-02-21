@@ -161,7 +161,8 @@ export default new Vuex.Store({
         context.commit('setUserId',res.docs[0].id)
           db.collection('users').doc(context.getters.getUserId).collection('services').get().then(res=>{
             context.commit('setServicesId',res.docs[0].id)
-            router.push('/')
+            context.dispatch('select_',context.getters.get_date_now);
+            router.push('/').catch();
           });    
         });
       },
@@ -177,6 +178,7 @@ export default new Vuex.Store({
           });
       },
       select_(context,date){
+        console.log(context.getters.getUserId)
         db.collection('users').doc(context.getters.getUserId).collection('services').get().then(res=>{
           context.commit('settings_',{budget:res.docs[0].data().budget,last_transaction:res.docs[0].data().last_transaction,total_cost:res.docs[0].data().total_cost});
           context.id_colletions=res.docs[0].id;
