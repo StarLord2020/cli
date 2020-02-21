@@ -39,9 +39,6 @@ computed :{
     get_time_now(){
       return this.$store.getters.get_time_now;
     },
-},
-created(){
-    
 }
 }
 </script>
