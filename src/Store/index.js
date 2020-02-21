@@ -90,9 +90,6 @@ export default new Vuex.Store({
     settings_(state,obj){
       state.capital=obj;
     },
-    set_history_cost(state,obj){
-      state.history_cost_for_category.push(obj);
-    },
     description_(state,val){
       state.description=val;
     },
@@ -178,7 +175,6 @@ export default new Vuex.Store({
           });
       },
       select_(context,date){
-        console.log(context.getters.getUserId)
         db.collection('users').doc(context.getters.getUserId).collection('services').get().then(res=>{
           context.commit('settings_',{budget:res.docs[0].data().budget,last_transaction:res.docs[0].data().last_transaction,total_cost:res.docs[0].data().total_cost});
           context.id_colletions=res.docs[0].id;
@@ -194,7 +190,6 @@ export default new Vuex.Store({
               context.state.list_category[variable].cost=summ_cost
             }); 
           }
-          // context.commit('set_history_cost',history_costs_array);
         }); 
          }
     }
