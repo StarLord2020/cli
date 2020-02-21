@@ -1,7 +1,7 @@
 <template>
 <div class="w-full max-w-xs">
-  <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+  <form class="bg-white form shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <div class=" px-3 mb-6 md:mb-0">
       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
         Выберите услуги
       </label>
@@ -78,4 +78,7 @@ export default {
 }
 </script>
 <style>
+.form{
+  width: 300px;
+}
 </style>
