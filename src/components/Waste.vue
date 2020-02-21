@@ -50,7 +50,7 @@ export default {
             this.value(this.check.value_input);
             this.$store.dispatch('insert_data',{date:this.get_date_now,description:this.value_desc,name_collection:this.check.selected,value:(this.get_capital.last_transaction*-1),time:this.get_time_now});
             this.$store.dispatch('update_waste', this.get_capital);
-            this.$store.dispatch('select_',this.get_date_now);
+            this.$store.dispatch('selectServicesData',this.get_date_now);
             this.cancel()
         },
         cancel(){
