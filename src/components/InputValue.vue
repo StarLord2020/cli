@@ -28,7 +28,6 @@ export default {
     mixins: [Check],
     methods:{
         setValue(){
-            // this.$emit("value",this.income);
             this.value(this.value_input);
             this.$store.dispatch('update_waste',this.get_capital);
             this.cancel()
