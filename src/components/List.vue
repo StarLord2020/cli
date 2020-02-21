@@ -41,7 +41,7 @@ computed :{
     },
 },
 created(){
-    this.$store.dispatch('select_',this.get_date_now);
+    
 }
 }
 </script>
