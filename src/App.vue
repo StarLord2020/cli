@@ -21,7 +21,7 @@ export default {
 
     if(localStorage.login&&localStorage.password){
       this.$store.dispatch('Authorization',{login:localStorage.login,password:localStorage.password,checked:true});
-      this.$router.push('/').catch();
+     
     }
     else {
       this.$router.push('/authorization').catch();
