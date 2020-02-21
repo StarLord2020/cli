@@ -1,13 +1,17 @@
 <template>
-    <div class="form-value w-full max-w-xs absolute"> 
+    <div class="form-value w-full max-w-xs"> 
         <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-10 ">
             <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="incm">
-                    Введите капитал в грн
-                </label>
                 {{name}}
               <ul>
-                 <li v-for="(item,i) in lists_history[name]" :key="i" >{{item.created_at}}-{{item.time}}-{{item.description}}-{{item.price}}</li>
+                 <li class="history" v-for="(item,i) in lists_history[name]" :key="i" >
+                    <ul>
+                      <li>Дата:{{item.created_at}}</li>
+                      <li>Время:{{item.time}}</li>
+                      <li>Описание:{{item.description}}</li>
+                      <li>Цена:{{item.price}}</li>
+                    </ul>
+                  </li>
               </ul>
             </div>
             <div class="flex items-center justify-between">
@@ -18,7 +22,6 @@
         </form>
     </div>  
 </template>
-
 <script>
 import Check from '../mixins/check'
 export default {
@@ -45,5 +48,7 @@ export default {
 </script>
 
 <style>
-
+.history {
+  border: 1px solid black;
+}
 </style>
