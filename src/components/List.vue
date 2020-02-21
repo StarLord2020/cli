@@ -1,7 +1,7 @@
 <template>
     <div class="relative w-full">
         <ul>
-            <li  @click="call_formhistory=true;getname(item.name)" class="flex w-3/6 mx-auto mb-8" v-for="item in lists" :key="item.id"><span class="flex"><img class="w-1/12" :src=item.img alt=""><span class="flex items-center">{{item.name}}</span></span><span class="flex items-center">{{item.cost}}$</span></li>
+            <li  @click="call_formhistory=true;getname(item.name)" class="flex w-3/5 mx-auto mb-8" v-for="item in lists" :key="item.id"><span class="flex"><img class="w-1/12" :src=item.img alt=""><span class="flex items-center">{{item.name}}</span></span><span class="flex items-center">{{item.cost}}$</span></li>
         </ul>
         <div class="absolute btn">
             <button v-if='!call_waste' class="bg-red-500 hover:bg-red-700 text-white font-bold rounded-full w-6 h-6 relative" @click="call_waste=true"><span class="btn_span absolute">-</span></button>
@@ -67,6 +67,16 @@ right: 20px;
     right: -3px;
 
 }
+@media (max-width: 1000px) { 
+    img {
+        width: 14%;
+    }
+ }
+ @media (max-width: 500px) { 
+    li {
+        width: 85%;
+    }
+ }
 .form-history{
     top: 6%;
     left: 30%;;
