@@ -9,10 +9,7 @@
 export default {
     name:"Home",
     methods:{
-        breakUser(){
-            this.$store.dispatch('rememberMe',{login:'',password:'',checked:false});
-            this.$router.push('/app');
-        }
+c
     }
 }
 </script>
