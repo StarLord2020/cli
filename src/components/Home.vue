@@ -16,16 +16,16 @@
                   </div>    
                   <nav class=" menu-list flex w-full  bg-teal  bg-red-400 absolute top-20">
                       <div :class="open ? 'block': 'hidden'" class="w-full flex-grow all:flex p-6 all:items-center all:w-auto">
-                          <div class="text-all all:flex-grow">
-                            <div class="link" >Пункт 1</div>
-                            <div class="link" >Пункт 2</div>
-                            <div class="link" >Пункт 3</div>
-                            <div class="link" >Пункт 4</div>
-                            <div class="link" >Пункт 5</div>
-                            <div class="link" >Пункт 6</div>
-                            <div class="link" >Пункт 7</div>
-                            <div class="link" @click="breakUser()">Выйти</div>
-                          </div>             
+                          <ul class="text-all all:flex-grow">
+                            <li class="link">Пункт меню</li>
+                            <li class="link">Пункт меню</li>
+                            <li class="link">Пункт меню</li>
+                            <li class="link">Пункт меню</li>
+                            <li class="link">Пункт меню</li>
+                            <li class="link">Пункт меню</li>
+                            <li class="link">Пункт меню</li>
+                            <li class="link" @click="breakUser()">Выйти</li>
+                          </ul>             
                       </div>
                       <div>
                           <button @click="toggle" class=" red flex   border rounded text-teal-lighter border-teal-light hover:text-white hover:border-white">
