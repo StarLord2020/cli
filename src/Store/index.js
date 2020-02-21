@@ -61,7 +61,7 @@ export default new Vuex.Store({
       return `${(state.date.getDate()<10? '0' : '')+state.date.getDate()}-${(state.date.getMonth()<10? '0' : '')+state.date.getMonth()}-${state.date.getFullYear()}`; 
   },
     get_time_now(state){
-      return `${state.date.getHours()}-${state.date.getMinutes()}-${state.date.getSeconds()}`
+      return `${state.date.getHours()}:${state.date.getMinutes()}:${state.date.getSeconds()}`
     }
   },
   mutations:{
@@ -159,7 +159,10 @@ export default new Vuex.Store({
           db.collection('users').doc(context.getters.getUserId).collection('services').get().then(res=>{
             context.commit('setServicesId',res.docs[0].id)
             context.dispatch('select_',context.getters.get_date_now);
-            router.push('/').catch();
+            if(router.path!=(router.path+'/')){
+
+              router.push('/').catch();
+            }
           });    
         });
       },
