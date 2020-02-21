@@ -11,14 +11,14 @@
         <div class="w-full flex justify-end">
             <div>Последняя операция:{{getCapital.last_transaction}} &#8372;</div>
         </div>
-        <input-value v-if="exit" @cancel="exit=false"></input-value>
+        <capital-form v-if="exit" @cancel="exit=false"></capital-form>
     </div>
   </div>
 </template>
 <script>
-import InputValue from './InputValue'
+import CapitalForm from './CapitalForm'
 export default {
-    components:{InputValue},
+    components:{CapitalForm},
     data(){
         return{
             income:0,
